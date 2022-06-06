@@ -27,7 +27,7 @@ iap = ImageToArrayPreprocessor()
 # load the dataset from disk then scale the raw pixel intensities
 # to the range [0, 1]
 sdl = SimpleLoader(preprocessors=[sp, iap])
-(data, labels) = sdl.load(imagePaths, verbose=500)
+(data, labels) = sdl.load_image(imagePaths, verbose=500)
 data = data.astype("float") / 255.0
 
 # partition the data into training and testing splits using 75% of
