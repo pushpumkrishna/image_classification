@@ -7,13 +7,12 @@ from imutils import paths
 import matplotlib.pyplot as plt
 import numpy as np
 import argparse
-
-# construct the argument parse and parse the arguments
 from cnn.shallow_net import ShallowNet
 from datasets.dataset_loader import SimpleLoader
 from preprocessing.dataset_processor import SimplePreprocessor
 from preprocessing.imagetoarraypreprocessor import ImageToArrayPreprocessor
 
+# construct the argument parse and parse the arguments
 ap = argparse.ArgumentParser()
 ap.add_argument("-d", "--dataset", required=True, help="path to input dataset")
 ap.add_argument("-m", "--model", required=True, help="path to output model")
