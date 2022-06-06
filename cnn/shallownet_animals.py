@@ -2,15 +2,14 @@
 from sklearn.preprocessing import LabelBinarizer
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report
-from pyimagesearch.preprocessing import ImageToArrayPreprocessor
-from pyimagesearch.preprocessing import SimplePreprocessor
-from pyimagesearch.datasets import SimpleDatasetLoader
-from pyimagesearch.nn.conv import ShallowNet
 from keras.optimizers import SGD
 from imutils import paths
-import matplotlib.pyplot as plt
-import numpy as np
 import argparse
+from cnn.shallownet import ShallowNet
+from datasets.dataset_loader import SimpleLoader
+from preprocessing.dataset_processor import SimplePreprocessor
+from preprocessing.imagetoarraypreprocessor import ImageToArrayPreprocessor
+
 
 # construct the argument parser and parse the arguments
 ap = argparse.ArgumentParser()
@@ -27,7 +26,7 @@ iap = ImageToArrayPreprocessor()
 
 # load the dataset from disk then scale the raw pixel intensities
 # to the range [0, 1]
-sdl = SimpleDatasetLoader(preprocessors=[sp, iap])
+sdl = SimpleLoader(preprocessors=[sp, iap])
 (data, labels) = sdl.load(imagePaths, verbose=500)
 data = data.astype("float") / 255.0
 
