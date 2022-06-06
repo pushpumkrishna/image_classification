@@ -5,7 +5,6 @@ from sklearn.metrics import classification_report
 from keras.models import Sequential
 from keras.layers.core import Dense
 from keras.optimizers import SGD
-from keras.datasets import mnist
 from sklearn.datasets import fetch_openml
 import matplotlib.pyplot as plt
 import numpy as np
@@ -63,3 +62,5 @@ plt.xlabel("Epoch #")
 plt.ylabel("Loss/Accuracy")
 plt.legend()
 # plt.savefig(args["output"])
+
+
