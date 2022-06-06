@@ -1,17 +1,6 @@
-def argHandler(argv):
+from sklearn.datasets import fetch_openml
 
-    import argparse
-
-    parser = argparse.ArgumentParser(description='Test argument parser')
-
-    parser.add_argument("-d", "--dataset", required=True, help="path to input dataset")
-
-    args = parser.parse_args(argv)
-
-    return args.foo, args.bar, args.nee
-
-if __name__=='__main__':
-
-    argList = ["./animals"]
-
-    print(argHandler(argList))
+print("[INFO] accessing MNIST...")
+X, y = fetch_openml("mnist_784", version=1, return_X_y=True, as_frame=False)
+print("[INFO] Shape of MNIST (full) dataset: ", X.shape)
+# data = X
