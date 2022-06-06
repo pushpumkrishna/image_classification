@@ -5,7 +5,7 @@ from sklearn.metrics import classification_report
 from keras.optimizers import SGD
 from imutils import paths
 import argparse
-from cnn.shallownet import ShallowNet
+from cnn.shallow_net import ShallowNet
 from datasets.dataset_loader import SimpleLoader
 from preprocessing.dataset_processor import SimplePreprocessor
 from preprocessing.imagetoarraypreprocessor import ImageToArrayPreprocessor
@@ -52,5 +52,4 @@ H = model.fit(trainX, trainY, validation_data=(testX, testY), batch_size=32, epo
 print("[INFO] evaluating network...")
 predictions = model.predict(testX, batch_size=32)
 print(classification_report(testY.argmax(axis=1), predictions.argmax(axis=1), target_names=["cat", "dog", "panda"]))
-
 
