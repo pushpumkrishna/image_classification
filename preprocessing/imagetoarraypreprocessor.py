@@ -2,7 +2,6 @@
 import tensorflow as tf
 
 from datasets.dataset_loader import SimpleLoader
-# from knn import imagePaths
 from preprocessing.dataset_processor import SimplePreprocessor
 
 
@@ -22,7 +21,7 @@ class ImageToArrayPreprocessor:
 sp = SimplePreprocessor(32, 32)
 iap = ImageToArrayPreprocessor()
 sdl = SimpleLoader(preprocessors=[sp, iap])
-(data, labels) = sdl.load_image(imagePaths, verbose=500)
+# (data, labels) = sdl.load_image(imagePaths, verbose=500)
 
 
 
