@@ -50,10 +50,13 @@ plt.style.use("ggplot")
 plt.figure()
 plt.plot(np.arange(0, 40), H.history["loss"], label="train_loss")
 plt.plot(np.arange(0, 40), H.history["val_loss"], label="val_loss")
-plt.plot(np.arange(0, 40), H.history["acc"], label="train_acc")
-plt.plot(np.arange(0, 40), H.history["val_acc"], label="val_acc")
+# plt.plot(np.arange(0, 40), H.history["acc"], label="train_acc")
+# plt.plot(np.arange(0, 40), H.history["val_acc"], label="val_acc")
 plt.title("Training Loss and Accuracy on CIFAR-10")
 plt.xlabel("Epoch #")
 plt.ylabel("Loss/Accuracy")
 plt.legend()
 plt.savefig(args["output"])
+
+# run in terminal
+# python ./minivggnet_cifar10.py --output output/cifar10_minivggnet_with_bn.pn
