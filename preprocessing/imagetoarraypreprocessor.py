@@ -1,6 +1,5 @@
 # import the necessary packages
 import tensorflow as tf
-
 from datasets.dataset_loader import SimpleLoader
 from preprocessing.dataset_processor import SimplePreprocessor
 
