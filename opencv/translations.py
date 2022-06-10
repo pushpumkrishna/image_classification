@@ -37,5 +37,3 @@ class Translation:
         shifted = cv2.warpAffine(image, matrix_2, (image.shape[1], image.shape[0]))
         cv2.imshow("Shifted Up and Left", shifted)
         cv2.waitKey(0)
-
-
